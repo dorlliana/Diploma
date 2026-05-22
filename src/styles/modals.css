@@ -1,0 +1,504 @@
+﻿/* Базові стилі модальних вікон */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal {
+  background: #1a1a1a;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal--confirm {
+  width: 400px;
+  max-width: 92vw;
+  padding: 24px;
+}
+
+.modal__title {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.modal__message {
+  margin: 0 0 20px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-dim);
+}
+
+.modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.modal__label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modal__input {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  padding: 10px 12px;
+  transition: border-color 0.15s;
+}
+
+.modal__input:focus {
+  border-color: var(--accent-color);
+}
+
+.modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal__btn {
+  padding: 9px 18px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s, background 0.15s;
+}
+
+.modal__btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.modal__btn--ghost {
+  background: transparent;
+  border: 1px solid #444;
+  color: #999;
+}
+
+.modal__btn--ghost:hover {
+  border-color: #666;
+  color: #ccc;
+}
+
+.modal__btn--primary {
+  background: var(--accent-color);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.modal__btn--primary:hover {
+  filter: brightness(1.1);
+}
+
+.modal__btn--danger {
+  background: var(--danger-color);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.modal__btn--danger:hover {
+  filter: brightness(1.1);
+}
+
+/* ── Авторизація ─────────────────────────────────────────────────────────── */
+
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: var(--bg-color);
+}
+
+.auth-box {
+  background: var(--toolbar-bg);
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 32px 28px;
+  width: 340px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.auth-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.auth-logo-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
+}
+
+.auth-logo-sub {
+  margin: 2px 0 0;
+  font-size: 11px;
+  color: #555;
+}
+
+.auth-tab-row {
+  display: flex;
+  background: #111;
+  border-radius: 8px;
+  padding: 3px;
+  margin-bottom: 24px;
+  gap: 3px;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 7px 0;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: #666;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s;
+}
+
+.auth-tab--active {
+  background: var(--node-bg);
+  color: var(--text-main);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.auth-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.auth-input {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: var(--text-main);
+  font-size: 13px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+
+.auth-input:focus {
+  border-color: var(--accent-color);
+}
+
+.auth-input--error {
+  border-color: var(--danger-color) !important;
+}
+
+.auth-error {
+  background: #2a1212;
+  border: 1px solid #4a2020;
+  border-radius: 6px;
+  padding: 9px 12px;
+  font-size: 12px;
+  color: #ff6b6b;
+}
+
+.auth-submit {
+  padding: 11px;
+  background: var(--accent-color);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 4px;
+  transition: opacity 0.15s;
+}
+
+.auth-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* ── GDD Modal — оновлені стилі для вибору секцій ───────────────────────── */
+
+.gdd-modal {
+  width: 680px;
+  max-width: 95vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.gdd-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 20px 14px;
+  border-bottom: 1px solid #2a2a2a;
+  flex-shrink: 0;
+}
+
+.gdd-modal__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.gdd-modal__subtitle {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.gdd-modal__close {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 6px;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.gdd-modal__close:hover { color: #ccc; }
+
+/* Рядок "обрати всі" */
+.gdd-modal__select-all-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #222;
+  flex-shrink: 0;
+}
+
+.gdd-modal__select-all {
+  background: transparent;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #aaa;
+  font-size: 12px;
+  font-family: inherit;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.gdd-modal__select-all:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.gdd-modal__select-all--active {
+  background: rgba(0, 122, 255, 0.12);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.gdd-modal__selected-count {
+  font-size: 11px;
+  color: #666;
+}
+
+/* Контент з прокруткою */
+.gdd-modal__preview {
+  padding: 14px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Сітка 3 колонки */
+.gdd-modal__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 560px) {
+  .gdd-modal__grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Картка секції */
+.gdd-modal__col-preview {
+  background: #1c1c1c;
+  border: 2px solid #2e2e2e;
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  user-select: none;
+  position: relative;
+}
+
+.gdd-modal__col-preview:hover {
+  border-color: #555;
+  background: #222;
+}
+
+.gdd-modal__col-preview--selected {
+  border-color: var(--accent-color);
+  background: rgba(0, 122, 255, 0.07);
+}
+
+/* Чекбокс у правому верхньому куті */
+.gdd-modal__col-check {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.gdd-modal__checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1.5px solid #555;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  transition: all 0.15s;
+}
+
+.gdd-modal__checkbox--checked {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* Заголовок картки */
+.gdd-modal__col-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-right: 22px;
+}
+
+.gdd-modal__col-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.gdd-modal__col-desc {
+  font-size: 10px;
+  color: #666;
+  line-height: 1.3;
+}
+
+/* Список завдань у картці */
+.gdd-modal__col-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.gdd-modal__task-preview {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.gdd-modal__task-check {
+  font-size: 10px;
+  color: #444;
+  flex-shrink: 0;
+}
+
+.gdd-modal__task-text {
+  font-size: 10px;
+  color: #888;
+  line-height: 1.3;
+  flex: 1;
+}
+
+.gdd-modal__task-sub {
+  font-size: 9px;
+  color: var(--accent-color);
+  background: rgba(0, 122, 255, 0.13);
+  padding: 1px 4px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.gdd-modal__task-more {
+  font-size: 9px;
+  color: #555;
+  font-style: italic;
+  padding-left: 2px;
+}
+
+/* Попередження */
+.gdd-modal__warning {
+  margin: 0 20px 0;
+  padding: 8px 12px;
+  background: #1f1800;
+  border: 1px solid #4a3510;
+  border-radius: 5px;
+  font-size: 11px;
+  color: #c9900a;
+  flex-shrink: 0;
+}
+
+/* Кнопки */
+.gdd-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 20px;
+  border-top: 1px solid #2a2a2a;
+  flex-shrink: 0;
+}
+
+.modal__btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
