@@ -62,11 +62,17 @@ function tokenizeGML(code) {
     );
 }
 
-const GMLEditor = ({ defaultValue, onChange }) => {
+const GMLEditor = ({ value = '', onChange }) => {
   const textareaRef = useRef(null);
   const preRef      = useRef(null);
-  const [code, setCode] = useState(defaultValue);
+  const [code, setCode] = useState(value);
   const [editing, setEditing] = useState(false);
+
+  useEffect(() => {
+    if (!editing) {
+      setCode(value);
+    }
+  }, [editing, value]);
 
   useEffect(() => {
     if (editing && textareaRef.current) {
@@ -99,6 +105,7 @@ const GMLEditor = ({ defaultValue, onChange }) => {
         <pre
           className="gml-highlight"
           aria-hidden="true"
+          dangerouslySetInnerHTML={{ __html: tokenizeGML(code) + '\n' }}
         />
       </div>
     );
@@ -444,7 +451,7 @@ const CustomNode = ({ data, selected }) => {
               onChange={(val) => data.onChange(val, 'label')}
             />
             <GMLEditor
-              defaultValue={data.content || ''}
+              value={data.content || ''}
               onChange={(val) => data.onChange(val, 'content')}
             />
           </>
